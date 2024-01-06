@@ -90,6 +90,8 @@ var upperCasedCharacters = [
 
 //lowercase characters is used as default password
 
+
+
 // Function to prompt user for password options
 function getPasswordOptions() {
     var passLegnth = prompt("How many characters would you like you password to be?");
@@ -103,16 +105,29 @@ function getPasswordOptions() {
       var passNumbers = confirm("Do you want numbers in your password?");
       console.log("Your password will be "+ passLegnth + " characters and will feature...\nCaptial letters: " + capLetter + "\nSymbols: " + symbols + "\nNumbers: " + passNumbers);
     
-    // if (capLetter == true) {
-    //   var userpassword = lowerCasedCharacters.concat(upperCasedCharacters);
-    // } 
-
     if (capLetter == true && symbols == true && passNumbers == true) {
       var userpassword = lowerCasedCharacters.concat(upperCasedCharacters, specialCharacters, numericCharacters)
-    }
 
-    console.log(userpassword);
-    
+    } else if (capLetter == false && symbols == true && passNumbers == true) {
+      var userpassword = lowerCasedCharacters.concat(specialCharacters, numericCharacters)
+
+    } else if (capLetter == false && symbols == false && passNumbers == true) {
+      var userpassword = lowerCasedCharacters.concat(numericCharacters)
+
+    } else if (capLetter == true && symbols == false && passNumbers == true) {
+      var userpassword = lowerCasedCharacters.concat(upperCasedCharacters)
+
+    } else if (capLetter == true && symbols == false && passNumbers == false) {
+      var userpassword = lowerCasedCharacters.concat(upperCasedCharacters) 
+
+    } else if (capLetter == false && symbols == true && passNumbers == false) {
+      var userpassword = lowerCasedCharacters.concat(specialCharacters) 
+
+    } else {
+      var userpassword = lowerCasedCharacters
+    } 
+
+    console.log(userpassword);   
 }
 
 getPasswordOptions();
