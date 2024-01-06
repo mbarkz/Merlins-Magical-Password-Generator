@@ -90,12 +90,12 @@ var upperCasedCharacters = [
 
 //lowercase characters is used as default password
 
-
+var passLegnth = prompt("How many characters would you like you password to be?");
+console.log(passLegnth);
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-    var passLegnth = prompt("How many characters would you like you password to be?");
-    console.log(passLegnth);
+
     if (passLegnth < 8 || passLegnth > 128) {
       alert("Password must be between 8 and 128 characters, please refresh to try again.");    
     } else {
@@ -130,16 +130,32 @@ function getPasswordOptions() {
     return(userpassword)
 }
 
-getPasswordOptions();
+var userPassArray = getPasswordOptions();
 
-
+console.log(userPassArray);
+// done - this returns an array of characters from which the randomiser can select from.
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+  
 }
 
+// this loops for the legnth of numbers which the user selected for thier password
+// the char variable stores a random choice from the userPassArray which is earlier concatanated from each selection in the 
+for (let i = 0; i < passLegnth; i++) {
+  let char = userPassArray[Math.floor(Math.random() * userPassArray.length)];
+  userPassArray.push(char[Math.floor(Math.random() * char.length)]);
+  console.log(char);
+}
+
+
+
 getRandom();
+
+
+
+
+
 
 // Function to generate password with user input
 function generatePassword() {
