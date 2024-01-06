@@ -88,8 +88,7 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-
-
+//lowercase characters is used as default password
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -102,7 +101,18 @@ function getPasswordOptions() {
     } 
       var symbols = confirm("Do you want special symbols in your password?");
       var passNumbers = confirm("Do you want numbers in your password?");
-      console.log("Your password will feature...\nCaptial letters: " + capLetter + "\nSymbols: " + symbols + "\nNumbers: " + passNumbers);
+      console.log("Your password will be "+ passLegnth + " characters and will feature...\nCaptial letters: " + capLetter + "\nSymbols: " + symbols + "\nNumbers: " + passNumbers);
+    
+    // if (capLetter == true) {
+    //   var userpassword = lowerCasedCharacters.concat(upperCasedCharacters);
+    // } 
+
+    if (capLetter == true && symbols == true && passNumbers == true) {
+      var userpassword = lowerCasedCharacters.concat(upperCasedCharacters, specialCharacters, numericCharacters)
+    }
+
+    console.log(userpassword);
+    
 }
 
 getPasswordOptions();
@@ -111,6 +121,8 @@ getPasswordOptions();
 function getRandom(arr) {
 
 }
+
+getRandom();
 
 // Function to generate password with user input
 function generatePassword() {
