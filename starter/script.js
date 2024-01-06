@@ -127,10 +127,12 @@ function getPasswordOptions() {
       var userpassword = lowerCasedCharacters
     } 
 
-    console.log(userpassword);   
+    return(userpassword)
 }
 
 getPasswordOptions();
+
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
