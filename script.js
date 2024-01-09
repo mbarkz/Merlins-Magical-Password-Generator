@@ -141,11 +141,12 @@ function getRandom(arr) {
 }
 
 // this loops for the legnth of numbers which the user selected for thier password
-// the char variable stores a random choice from the userPassArray which is earlier concatanated from each selection in the 
+// the finalPass variable stores a random choice from the userPassArray which is earlier concatanated from each selection in the 
+// the .push then adds another 
 for (let i = 0; i < passLegnth; i++) {
-  let char = userPassArray[Math.floor(Math.random() * userPassArray.length)];
-  userPassArray.push(char[Math.floor(Math.random() * char.length)]);
-  console.log(char);
+  let finalPass = userPassArray[Math.floor(Math.random() * userPassArray.length)];
+  userPassArray.push(finalPass[Math.floor(Math.random() * finalPass.length)]);
+  console.log(finalPass);
 }
 
 
