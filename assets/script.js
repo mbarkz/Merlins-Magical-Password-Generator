@@ -143,6 +143,9 @@ function getRandom(arr) {
 // this loops for the legnth of numbers which the user selected for thier password
 // the finalPass variable stores a random choice from the userPassArray which is earlier concatanated from each selection in the 
 // the .push then adds another 
+
+var finalPass = 0
+
 for (let i = 0; i < passLegnth; i++) {
   let finalPass = userPassArray[Math.floor(Math.random() * userPassArray.length)];
   userPassArray.push(finalPass[Math.floor(Math.random() * finalPass.length)]);
@@ -166,12 +169,14 @@ function generatePassword() {
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
+  passwordText.value = finalPass;
 }
 
 // Add event listener to generate button
